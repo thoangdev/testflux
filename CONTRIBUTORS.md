@@ -3,7 +3,7 @@
 ## Core Team
 
 ### Maintainers
-- **Lead Developer** - @your-username
+- **Lead Developer** - @thoangdev
   - Project architecture and technical direction
   - Backend API development
   - Database design and optimization
