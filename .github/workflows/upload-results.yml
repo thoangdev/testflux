@@ -1,0 +1,63 @@
+name: Upload Test Results
+
+on:
+  workflow_call:
+    inputs:
+      product:
+        required: true
+        type: string
+      environment:
+        required: true
+        type: string
+      test-type:
+        required: true
+        type: string
+      results-path:
+        required: true
+        type: string
+    secrets:
+      TESTFLUX_API_URL:
+        required: true
+      TESTFLUX_API_TOKEN:
+        required: true
+
+jobs:
+  upload-results:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Upload test results to TestFlux
+      run: |
+        # Create metadata file
+        cat > metadata.json << EOF
+        {
+          "product": "${{ inputs.product }}",
+          "environment": "${{ inputs.environment }}",
+          "testType": "${{ inputs.test-type }}",
+          "runTimestamp": "$(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)",
+          "source": "github_actions",
+          "sourceMetadata": {
+            "repository": "${{ github.repository }}",
+            "ref": "${{ github.ref }}",
+            "sha": "${{ github.sha }}",
+            "workflow": "${{ github.workflow }}",
+            "runId": "${{ github.run_id }}",
+            "actor": "${{ github.actor }}"
+          }
+        }
+        EOF
+
+        # Upload results using curl
+        curl -X POST \
+          -H "Authorization: Bearer ${{ secrets.TESTFLUX_API_TOKEN }}" \
+          -H "Content-Type: multipart/form-data" \
+          -F "metadata=@metadata.json" \
+          -F "files=@${{ inputs.results-path }}" \
+          "${{ secrets.TESTFLUX_API_URL }}/api/upload"
+
+    - name: Check upload status
+      run: |
+        echo "Test results uploaded successfully to TestFlux dashboard"
+        echo "View results at: ${{ secrets.TESTFLUX_API_URL }}"

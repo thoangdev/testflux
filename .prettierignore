@@ -1,0 +1,50 @@
+# Prettier ignore patterns
+node_modules/
+dist/
+build/
+coverage/
+.next/
+.nuxt/
+.vuepress/
+.cache/
+.temp/
+
+# Dependencies
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Generated files
+*.min.js
+*.min.css
+*.bundle.js
+
+# Build outputs
+*.map
+*.d.ts
+
+# Environment files
+.env*
+
+# Documentation
+CHANGELOG.md
+
+# Database files
+*.sql
+*.db
+*.sqlite
+
+# Binary files
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.svg
+*.ico
+*.woff
+*.woff2
+*.ttf
+*.eot
+
+# Logs
+*.log

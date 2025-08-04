@@ -1,0 +1,38 @@
+# Prettier Configuration
+# Basic formatting
+semi: true
+singleQuote: true
+tabWidth: 2
+useTabs: false
+printWidth: 80
+
+# Trailing commas
+trailingComma: 'es5'
+
+# Bracket spacing
+bracketSpacing: true
+bracketSameLine: false
+
+# Arrow function parentheses
+arrowParens: 'avoid'
+
+# End of line
+endOfLine: 'lf'
+
+# HTML/JSX
+htmlWhitespaceSensitivity: 'css'
+jsxSingleQuote: true
+
+# Plugin configurations
+plugins:
+  - prettier-plugin-tailwindcss
+
+# Override for specific files
+overrides:
+  - files: '*.json'
+    options:
+      tabWidth: 2
+  - files: '*.md'
+    options:
+      proseWrap: 'always'
+      printWidth: 100
