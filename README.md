@@ -2,7 +2,7 @@
 
 A comprehensive enterprise-grade web application for aggregating, storing, and visualizing automated test results from multiple sources including Robot Framework, ZAP, and k6.
 
-[![CI/CD Pipeline](https://github.com/your-org/testflux/workflows/CI%2FCD%20Pipeline/badge.svg)](https://github.com/your-org/testflux/actions)
+[![CI/CD Pipeline](https://github.com/thoangdev/testflux/workflows/CI%2FCD%20Pipeline/badge.svg)](https://github.com/your-org/testflux/actions)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=testflux&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=testflux)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=testflux&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=testflux)
 [![Known Vulnerabilities](https://snyk.io/test/github/your-org/testflux/badge.svg)](https://snyk.io/test/github/your-org/testflux)
