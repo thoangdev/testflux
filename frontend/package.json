@@ -37,7 +37,7 @@
     "tailwind-merge": "^2.0.0",
     "date-fns": "^2.30.0",
     "recharts": "^2.8.0",
-    "lucide-react": "^0.292.0",
+    "lucide-react": "^0.525.0",
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
     "framer-motion": "^10.16.4",
